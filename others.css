@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 440px;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    background-image: url("images/background.png");
+    background-repeat: no-repeat;
+    background-position:left center;
+    background-size: 440px 3184px; /* 對應你的圖片尺寸 */
+    overflow-x: hidden;
+    
+}
+
+/* 工具列 */
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 440px;
+    height: 68px;
+    background-color: #594b3e;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.title {
+    font-size: 18px;
+}
+
+/* 左邊 Home */
+.home-btn {
+    position: absolute;
+    left: 16px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+
+    display: none; /* 預設隱藏 */
+}
+
+.menu-btn {
+    position: absolute;
+    right: 16px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 下拉選單本體 */
+.dropdown-menu {
+    position: fixed;
+    top: 68px; /* 工具列下方 */
+    left: 0;
+    width: 440px;
+    height: 295px;
+    background-color: #594b3e;
+    color: #ffffff; 
+    z-index: 999;
+
+    /* 初始狀態：收起 */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+/* 展開狀態 */
+.dropdown-menu.show {
+    transform: translateY(0);
+}
+
+/* 選單內容 */
+.dropdown-menu ul {
+    list-style: none;
+}
+
+.dropdown-menu li {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+/* 讓 a 充滿整個 li */
+.dropdown-menu li a {
+    display: block;         /* 讓整個 li 區塊都可點 */
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-decoration: none;
+}
+/* 滑鼠懸停效果 */
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 主內容 */
+.content {
+    margin-top: 68px;
+    width: 440px;
+    padding: 16px;
+    box-sizing: border-box; /* 關鍵 */
+    min-height: calc(100vh - 68px);  /* 工具列底下至少填滿頁面 */
+    padding-bottom: 50px;            /* 給底部空間 */
+}
+.home-btn img {
+    width: 40px;
+    height: 40px;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;    /* 可以根據 icon 調整 */
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    padding: 0;      /* 去掉按鈕內部預設間距 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #back-to-top img {
+    width: 80%;      /* 調整 icon 大小，保持比例 */
+    height: auto;
+  }
+  
+  /* 滑鼠懸停效果 */
+  #back-to-top:hover {
+    background-color: rgba(65, 65, 65, 0.8);
+  }
+  /* 主內容 */
+.content {
+    margin-top: 68px;
+    width: 440px;
+    padding: 16px;
+    box-sizing: border-box; /* 關鍵 */
+    min-height: calc(100vh - 68px);  /* 工具列底下至少填滿頁面 */
+    padding-bottom: 50px;            /* 給底部空間 */
+}
+.home-btn img {
+    width: 40px;
+    height: 40px;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;    /* 可以根據 icon 調整 */
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    padding: 0;      /* 去掉按鈕內部預設間距 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #back-to-top img {
+    width: 80%;      /* 調整 icon 大小，保持比例 */
+    height: auto;
+  }
+  
+  /* 滑鼠懸停效果 */
+  #back-to-top:hover {
+    background-color: rgba(65, 65, 65, 0.8);
+  }
+  .header-card {
+    position: relative;
+    width: 440px;
+    height: 401px;
+    overflow: hidden;
+    border-radius: 8px; /* 可選，讓邊角圓滑 */
+  }
+  
+  /* 圖片撐滿容器 */
+  .header-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* 文字容器 */
+  .header-texts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -105%); /* 垂直+水平置中 */
+    text-align: center;
+    color: #907f70;
+    width: 440px;
+    height: 126px;
+    background-color: rgba(255, 255, 255,0.8); 
+  }
+  
+  /* 主文字 */
+  .main-text {
+    margin: 0;
+    font-size: 35px; /* 可調整大小 */
+    padding-top: 20px; 
+  }
+  
+  /* 次文字 */
+  .sub-text {
+    margin: 0;
+    font-size: 24px; /* 可調整大小 */
+  }
+  #main-content {
+    background-color: transparent;
+    
+  }
+  .down-arrow {
+    position: absolute;
+    bottom: 0px;       /* 距離底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: bounce 2s infinite;
+  }
+  
+  /* 設定圖片大小 */
+  .down-arrow img {
+    width: 48px;        /* 調整成你想要的大小 */
+    height: auto;
+  }
+  /* 箭頭彈跳動畫 */
+ @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+  }
+  .img10{
+    width: 440px;
+    height: 3801;
+    background-color: #ffffff;
+  }

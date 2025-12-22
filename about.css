@@ -1,0 +1,550 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 440px;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    background-image: url("images/background.png");
+    background-repeat: no-repeat;
+    background-position:left center;
+    background-size: 440px 3184px; /* 對應你的圖片尺寸 */
+    overflow-x: hidden;
+    
+}
+
+/* 工具列 */
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 440px;
+    height: 68px;
+    background-color: #594b3e;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.title {
+    font-size: 18px;
+}
+
+/* 左邊 Home */
+.home-btn {
+    position: absolute;
+    left: 16px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+
+    display: none; /* 預設隱藏 */
+}
+
+.menu-btn {
+    position: absolute;
+    right: 16px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 下拉選單本體 */
+.dropdown-menu {
+    position: fixed;
+    top: 68px; /* 工具列下方 */
+    left: 0;
+    width: 440px;
+    height: 295px;
+    background-color: #594b3e;
+    color: #ffffff; 
+    z-index: 999;
+
+    /* 初始狀態：收起 */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+/* 展開狀態 */
+.dropdown-menu.show {
+    transform: translateY(0);
+}
+
+/* 選單內容 */
+.dropdown-menu ul {
+    list-style: none;
+}
+
+.dropdown-menu li {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+/* 讓 a 充滿整個 li */
+.dropdown-menu li a {
+    display: block;         /* 讓整個 li 區塊都可點 */
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-decoration: none;
+}
+/* 滑鼠懸停效果 */
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 主內容 */
+.content {
+    margin-top: 68px;
+    width: 440px;
+    padding: 16px;
+    box-sizing: border-box; /* 關鍵 */
+    min-height: calc(100vh - 68px);  /* 工具列底下至少填滿頁面 */
+    padding-bottom: 50px;            /* 給底部空間 */
+}
+.home-btn img {
+    width: 40px;
+    height: 40px;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;    /* 可以根據 icon 調整 */
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    padding: 0;      /* 去掉按鈕內部預設間距 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #back-to-top img {
+    width: 80%;      /* 調整 icon 大小，保持比例 */
+    height: auto;
+  }
+  
+  /* 滑鼠懸停效果 */
+  #back-to-top:hover {
+    background-color: rgba(65, 65, 65, 0.8);
+  }
+  /* 主內容 */
+.content {
+    margin-top: 68px;
+    width: 440px;
+    padding: 16px;
+    box-sizing: border-box; /* 關鍵 */
+    min-height: calc(100vh - 68px);  /* 工具列底下至少填滿頁面 */
+    padding-bottom: 50px;            /* 給底部空間 */
+}
+.home-btn img {
+    width: 40px;
+    height: 40px;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;    /* 可以根據 icon 調整 */
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    padding: 0;      /* 去掉按鈕內部預設間距 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #back-to-top img {
+    width: 80%;      /* 調整 icon 大小，保持比例 */
+    height: auto;
+  }
+  
+  /* 滑鼠懸停效果 */
+  #back-to-top:hover {
+    background-color: rgba(65, 65, 65, 0.8);
+  }
+  .header-card {
+    position: relative;
+    width: 440px;
+    height: 401px;
+    overflow: hidden;
+    border-radius: 8px; /* 可選，讓邊角圓滑 */
+  }
+  
+  /* 圖片撐滿容器 */
+  .header-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* 文字容器 */
+  .header-texts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -105%); /* 垂直+水平置中 */
+    text-align: center;
+    color: #907f70;
+    width: 440px;
+    height: 126px;
+    background-color: rgba(255, 255, 255,0.8); 
+  }
+  
+  /* 主文字 */
+  .main-text {
+    margin: 0;
+    font-size: 35px; /* 可調整大小 */
+    padding-top: 20px; 
+  }
+  
+  /* 次文字 */
+  .sub-text {
+    margin: 0;
+    font-size: 24px; /* 可調整大小 */
+  }
+  #main-content {
+    background-color: transparent;
+    
+  }
+  .down-arrow {
+    position: absolute;
+    bottom: 0px;       /* 距離底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: bounce 2s infinite;
+  }
+  
+  /* 設定圖片大小 */
+  .down-arrow img {
+    width: 48px;        /* 調整成你想要的大小 */
+    height: auto;
+  }
+  /* 箭頭彈跳動畫 */
+ @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+  }
+  .main-large{
+    width: 440px;
+    height: 524px;
+    justify-content: center;   /* 水平置中 */
+    align-items: center;       /* 垂直置中 */
+    background-color: #ffffff;
+    display: flex;
+  }
+  .main-content{
+    width: 362px;
+    height: 483px;
+    background-color: #ffffff;
+    border: 1px solid #594b3e; 
+  }
+  /* 主文字 */
+  .main-text2 {
+        margin: 0;
+        font-size: 35px;
+        height: 80px;            /* 固定區塊高度 */
+        display: flex;            /* flex 容器 */
+        justify-content: center;  /* 水平置中 */
+        align-items: center;      /* 垂直置中 */
+        text-align: center;
+        color: #fff;
+        background-color: #7f7062;
+    
+  }
+  .main-text3{
+    text-align: center;
+    color: #7f7062;
+  }
+.main-text3::before,
+.main-text3::after{
+    content: "";
+    display:block;
+    width: 360px;
+    height: 8px;
+    background: #7f7062;
+
+  }
+  .media-block {
+    width: 440px;          /* 整個區塊寬度 */
+    height: 248px;         /* 整個區塊高度 */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 單張卡片 */
+  .media-card {
+    flex: 1;               /* ⭐ 平均分上下空間（重點） */
+    position: relative;
+    display: block;        /* a 變成區塊 */
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    overflow: hidden;
+    .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;   /* ⭐保持比例填滿容器 */
+        display: block;
+    }
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.6s ease; /* ← Smart Animate 感 */
+  }
+  .bg-default {
+    background-image: url('images/about3.png');
+    opacity: 1;
+  }
+  .bg-hover {
+    background-image: url('images/about4.png');
+    opacity: 0;
+  }
+  .media-card:hover .bg-default {
+    opacity: 0;
+  }
+  
+  .media-card:hover .bg-hover {
+    opacity: 1;
+  }
+  
+  
+  /* 中央文字遮罩 */
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    font-size: 28px;
+    font-weight: bold;
+    color: #7d665b;
+    border-radius: 4px;
+  
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover 效果 */
+  .media-card:hover .overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .main-content4{
+    position: relative;
+    text-align: center;
+    width: 440px;
+    height: 2904px;
+    background-color: rgba(255, 255, 255);
+    margin: 0 auto;
+  }
+  .main-img3{
+    display: block;
+  }
+  .main-text5{    
+
+    display: grid;                 /* 使用 flex */
+    align-items: center;           /* 垂直置中 */
+    justify-content: center;       /* 水平置中 */
+    width: 362px;                  /* 與線條一致 */
+    height: 41px;
+    color: #594b3e;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255);
+    margin: 0 auto;                /* 置中 */
+    position: relative;            /* 給 ::before/::after 定位用 */
+    text-align: center;
+}
+.main-text5::before,
+.main-text5::after{
+    content: "";
+    display:block;
+    width: 100%;
+    width: 360px;
+    height: 3px;
+    background: #7f7062;
+    
+
+  }
+  .main-text6{
+    text-align: left;
+    width: 360px;              
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.9;          
+  letter-spacing: 0.05em;    
+  color: #5a4a3f;  
+  }
+  .top-line {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 80%;
+    height: 3px;
+    background-color: #7f7062;
+    transform: translateX(-50%);
+  }
+  .btn-group {
+    top: 50px;
+    position: absolute;                    /* 整組往下調 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    
+      width: 260px;
+      height: 48px;
+      border-radius: 999px;
+    
+      background: #fff;
+      border: 2px solid #7f7062;
+      color: #7f7062;
+    
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+  
+    
+    transition: all 0.3s ease;
+  }
+  
+  .pill-btn:hover {
+    background-color: #7f7062;
+    color: #fff;
+  }
+  
+
+  .history-section {
+    width: 440px;
+   height: 228px;                 
+   background-image: url("images/build12.png");
+   background-size: cover;
+   background-position: bottom;
+    position: relative; /* 沒有這行一定會飛 */
+  }
+  .footer{
+    position: relative;
+    width: 440px;   /* 區塊寬 */
+    height: 73px;  /* 區塊高 */
+    background-color:#594b3e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-text{
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+  
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .modal-box {
+    width: 393px;
+    height: 484px;
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-header{
+    position: relative;
+    background-color: #746253;
+    width: 395px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color:#ffffff;
+  }
+  .close-btn{
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .close-btn img {
+    background-color: transparent;
+    box-shadow: none;
+    width: 20px;
+    height: auto;
+  }
+  .modal-content {
+    white-space: pre-line;
+    color: #52473D;
+    flex: 1;                 /* 撐滿剩餘高度 */
+    overflow-y: auto;        /* 垂直滾動 */
+    line-height: 1.4;
+    font-size: 14px;
+
+    
+  }
+  #modal-content {
+    line-height: 1.4;   /* 1.2 ~ 1.6 都常用 */
+    font-size: 14px;    /* 行距會跟著字級 */
+  }
+
+  .modal-title {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #7f7062;
+    color: #fff;
+    flex-shrink: 0; /* 關鍵：不要被壓縮 */
+  }
+  
+  
