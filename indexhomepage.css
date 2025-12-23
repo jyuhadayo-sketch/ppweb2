@@ -118,9 +118,11 @@ body {
 }
 
 .header-image {
+  position: relative;
     width: 100%;        /* 撐滿整個寬度 */
     height: 907px;      /* 固定高度 */
     overflow: hidden;   /* 避免圖片超出容器 */
+
   }
   
   .header-image img {
@@ -172,7 +174,6 @@ body {
   
   /* 下方內容示意 */
   #main-content {
-    height: 250px;
     background-color: transparent;
     padding: 20px;
   }
