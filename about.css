@@ -6,13 +6,13 @@
 }
 
 body {
-    width: 440px;
+    width: 100%;
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    background-image: url("images/background.png");
+    background-image: url("images/background0.png");
     background-repeat: no-repeat;
-    background-position:left center;
-    background-size: 440px 3184px; /* 對應你的圖片尺寸 */
+    background-position:center;
+    background-size:100%;
     overflow-x: hidden;
     
 }
@@ -20,13 +20,10 @@ body {
 /* 工具列 */
 .toolbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 440px;
+    width: 100%;
     height: 68px;
     background-color: #594b3e;
     color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,10 +59,10 @@ body {
 
 /* 下拉選單本體 */
 .dropdown-menu {
-    position: fixed;
+     position: fixed;
     top: 68px; /* 工具列下方 */
     left: 0;
-    width: 440px;
+    width:100%;
     height: 295px;
     background-color: #594b3e;
     color: #ffffff; 
@@ -183,11 +180,12 @@ body {
     background-color: rgba(65, 65, 65, 0.8);
   }
   .header-card {
-    position: relative;
+  position: relative;
     width: 440px;
     height: 401px;
     overflow: hidden;
     border-radius: 8px; /* 可選，讓邊角圓滑 */
+    margin: 0 auto;
   }
   
   /* 圖片撐滿容器 */
@@ -254,6 +252,7 @@ body {
     align-items: center;       /* 垂直置中 */
     background-color: #ffffff;
     display: flex;
+    margin: 0 auto;
   }
   .main-content{
     width: 362px;
@@ -264,6 +263,7 @@ body {
   /* 主文字 */
   .main-text2 {
         margin: 0;
+        width: 440px;
         font-size: 35px;
         height: 80px;            /* 固定區塊高度 */
         display: flex;            /* flex 容器 */
@@ -272,6 +272,7 @@ body {
         text-align: center;
         color: #fff;
         background-color: #7f7062;
+        margin: 0 auto;
     
   }
   .main-text3{
@@ -292,6 +293,7 @@ body {
     height: 248px;         /* 整個區塊高度 */
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
   
   /* 單張卡片 */
@@ -368,7 +370,9 @@ body {
     margin: 0 auto;
   }
   .main-img3{
+    width: 440px;
     display: block;
+    margin: 0 auto;
   }
   .main-text5{    
 

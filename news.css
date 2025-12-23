@@ -6,27 +6,26 @@
 }
 
 body {
-    width: 440px;
+
+    width: 100%;
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    background-image: url("images/background.png");
+    background-image: url("images/background1.png");
     background-repeat: no-repeat;
-    background-position:left center;
-    background-size: 440px 3184px; /* 對應你的圖片尺寸 */
+    background-position:center;
+    background-size:100%;
     overflow-x: hidden;
+    
     
 }
 
 /* 工具列 */
 .toolbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 440px;
+    width: 100%;
     height: 68px;
     background-color: #594b3e;
     color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,10 +61,10 @@ body {
 
 /* 下拉選單本體 */
 .dropdown-menu {
-    position: fixed;
+     position: fixed;
     top: 68px; /* 工具列下方 */
     left: 0;
-    width: 440px;
+    width:100%;
     height: 295px;
     background-color: #594b3e;
     color: #ffffff; 
@@ -149,6 +148,7 @@ body {
     height: 401px;
     overflow: hidden;
     border-radius: 8px; /* 可選，讓邊角圓滑 */
+    margin: 0 auto;
   }
   
   /* 圖片撐滿容器 */
@@ -167,7 +167,7 @@ body {
     transform: translate(-50%, -105%); /* 垂直+水平置中 */
     text-align: center;
     color: #907f70;
-    width: 440px;
+    width: 100%;
     height: 126px;
     background-color: rgba(255, 255, 255,0.8); 
   }
@@ -205,6 +205,7 @@ body {
   .main-content2{
     width: 390px;   /* 區塊寬 */
     height: 740px;  /* 區塊高 */
+    margin: 0 auto;
 
   }
   .main-text2{
@@ -261,6 +262,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin: 0 auto;
 }
 
 /* 滑動容器 */
@@ -340,6 +342,7 @@ display: none;                 /* Chrome, Safari, Opera */
 .main-content3{
     width: 390px;   /* 區塊寬 */
     height: 531px;  /* 區塊高 */
+    margin: 0 auto;
 }
 .main-text4{
     width: 390px;   /* 區塊寬 */
@@ -381,7 +384,7 @@ display: none;                 /* Chrome, Safari, Opera */
     box-sizing: border-box;
 }
 .footer{
-    width: 440px;   /* 區塊寬 */
+    width: 100%;   /* 區塊寬 */
     height: 73px;  /* 區塊高 */
     background-color:#594b3e;
     display: flex;

@@ -6,13 +6,13 @@
 }
 
 body {
-    width: 440px;
+    width: 100%;
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    background-image: url("images/background.png");
+    background-image: url("images/background1.png");
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 440px 3184px; /* 對應你的圖片尺寸 */
+    background-position:center;
+    background-size:100%;
     overflow-x: hidden;
     
 }
@@ -20,13 +20,10 @@ body {
 /* 工具列 */
 .toolbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 440px;
+    width: 100%;
     height: 68px;
     background-color: #594b3e;
     color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +62,7 @@ body {
     position: fixed;
     top: 68px; /* 工具列下方 */
     left: 0;
-    width: 440px;
+    width:100%;
     height: 295px;
     background-color: #594b3e;
     color: #ffffff; 
@@ -118,8 +115,9 @@ body {
 }
 
 .header-image {
+  margin: 0 auto;
   position: relative;
-    width: 100%;        /* 撐滿整個寬度 */
+    max-width: 440px;        /* 撐滿整個寬度 */
     height: 907px;      /* 固定高度 */
     overflow: hidden;   /* 避免圖片超出容器 */
 
@@ -454,11 +452,16 @@ display: none;                 /* Chrome, Safari, Opera */
   
   
   .media-block {
-    width: 440px;          /* 整個區塊寬度 */
+    max-width: 440px;
     height: 500px;         /* 整個區塊高度 */
     display: flex;
     flex-direction: column;
     gap: 10px;
+      justify-content: center;
+      margin: 0 auto;
+    
+
+
   }
   
   /* 單張卡片 */
@@ -471,6 +474,7 @@ display: none;                 /* Chrome, Safari, Opera */
     background-position: center;
     border-radius: 4px;
     overflow: hidden;
+
   }
   .bg {
     position: absolute;
@@ -526,9 +530,10 @@ display: none;                 /* Chrome, Safari, Opera */
   .map-section{
     width: 438px;   /* 區塊寬 */
     height: 309px;  /* 區塊高 */
+    margin: 0 auto;
   }
   .footer{
-    width: 440px;   /* 區塊寬 */
+    width: 100%;   /* 區塊寬 */
     height: 73px;  /* 區塊高 */
     background-color:#594b3e;
     display: flex;
